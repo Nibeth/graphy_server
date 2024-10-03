@@ -1,11 +1,5 @@
-FROM node:hydrogen-buster
+FROM node:22.8.0-bookworm-slim
 
-RUN apt-get update && \
-    apt-get install -y \
-       git@1:2.20.1-2+deb10u9 \
-       git/git-man@1:2.20.1-2+deb10u9 && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
     
 COPY graphserver.js .
 COPY package.json .
